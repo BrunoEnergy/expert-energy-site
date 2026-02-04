@@ -1,0 +1,711 @@
+/* ==========================================================================
+   CORREÇÕES DE RESPONSIVIDADE MOBILE - Expert Energy
+   Versão: 4.1.0
+   Data: 28/Jan/2026
+   ========================================================================== */
+
+/* ==========================================================================
+   FIXES GLOBAIS MOBILE
+   ========================================================================== */
+
+/* Prevenir overflow horizontal em mobile */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Container principal - garantir padding adequado */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        max-width: 100% !important;
+    }
+    
+    .section {
+        padding: 2rem 0 !important;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÕES PÁGINA ANALISE.HTML - FORMULÁRIO
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Card do formulário - ajustar padding */
+    .card {
+        padding: 1.5rem 1rem !important;
+        margin: 0 !important;
+        border-radius: 12px;
+    }
+    
+    /* Grids de formulário - forçar coluna única */
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
+    div[style*="grid-template-columns: 2fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    /* Form groups */
+    .form-group {
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Inputs e selects */
+    .form-input,
+    .form-select,
+    .form-textarea {
+        width: 100% !important;
+        font-size: 16px !important; /* Previne zoom no iOS */
+        padding: 0.75rem !important;
+    }
+    
+    /* Labels */
+    .form-label {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* File upload */
+    .file-upload {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    /* Checkboxes inline - transformar em coluna */
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    /* Botões do formulário */
+    .btn,
+    .btn-gradient {
+        width: 100% !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+        justify-content: center !important;
+    }
+    
+    /* Botão WhatsApp */
+    a.btn[href*="wa.me"] {
+        font-size: 0.95rem !important;
+        padding: 0.875rem 1rem !important;
+    }
+    
+    /* Cards de benefícios */
+    .card-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .card-grid .card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+/* Mobile extra pequeno (iPhone SE, etc) */
+@media (max-width: 375px) {
+    .card {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .form-input,
+    .form-select {
+        font-size: 15px !important;
+        padding: 0.625rem !important;
+    }
+    
+    .btn,
+    .btn-gradient {
+        font-size: 0.9rem !important;
+        padding: 0.875rem 1rem !important;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÕES PÁGINA CASES.HTML
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Stats grid */
+    .stats-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    .stat-card {
+        width: 100% !important;
+        padding: 1.5rem 1rem !important;
+        text-align: center !important;
+    }
+    
+    .stat-number {
+        font-size: 2rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Case items */
+    .case-item {
+        padding: 1.5rem 1rem !important;
+        margin: 0 0 1.5rem 0 !important;
+    }
+    
+    .case-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+    
+    .case-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    .case-title {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .case-tags {
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .case-tag {
+        font-size: 0.75rem !important;
+        padding: 0.375rem 0.75rem !important;
+    }
+    
+    /* Case content */
+    .case-description {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .case-challenges,
+    .case-solution,
+    .case-results {
+        padding: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .case-challenges h4,
+    .case-solution h4,
+    .case-results h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .case-challenges ul,
+    .case-solution ul {
+        font-size: 0.875rem !important;
+    }
+    
+    .case-challenges li,
+    .case-solution li {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* Result grid - 2 colunas em mobile */
+    .result-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+    
+    .result-item {
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .result-number {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .result-label {
+        font-size: 0.75rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Testimonial */
+    .case-testimonial {
+        padding: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    .case-testimonial p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .testimonial-author {
+        font-size: 0.85rem !important;
+        margin-top: 0.75rem !important;
+    }
+    
+    /* Seção de depoimentos */
+    .testimonials-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .testimonial-card {
+        width: 100% !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .testimonial-avatar {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.25rem !important;
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .testimonial-name {
+        font-size: 0.875rem !important;
+    }
+    
+    .testimonial-position {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÕES PÁGINA INDEX.HTML
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Hero section */
+    .hero {
+        padding: 5rem 1rem 3rem !important;
+        min-height: auto !important;
+    }
+    
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-text p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .hero-stats {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    /* Cards de soluções */
+    .solutions-grid,
+    .card-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0 !important;
+    }
+    
+    .solution-card,
+    .feature-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÕES PÁGINAS DE SOLUÇÕES (software-energy-link.html, etc)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Page header */
+    .page-header {
+        padding: 6rem 1rem 3rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .page-header-content p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Features grid */
+    .features-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .feature-card {
+        width: 100% !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .feature-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    .feature-title {
+        font-size: 1.125rem !important;
+    }
+    
+    .feature-description {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÕES FOOTER
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 2rem 1rem !important;
+    }
+    
+    .footer-section {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.125rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .footer-links {
+        text-align: center !important;
+    }
+    
+    .footer-links li {
+        font-size: 0.875rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .social-links {
+        justify-content: center !important;
+    }
+    
+    .footer-bottom {
+        padding: 1rem !important;
+        font-size: 0.8rem !important;
+        text-align: center !important;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÕES CHATBOT MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+    
+    .chatbot-header {
+        padding: 1rem !important;
+    }
+    
+    .chatbot-messages {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .chatbot-input-wrapper {
+        padding: 0.75rem !important;
+    }
+    
+    .chatbot-input {
+        font-size: 16px !important; /* Previne zoom no iOS */
+    }
+}
+
+/* Limitar widget de chat/bot a 50% da altura da tela em mobile */
+@media (max-width: 768px) {
+  /* seletores comuns — ajusta se o seu widget usa outro seletor */
+  #chatbot,
+  .chatbot,
+  .chat-widget,
+  .bot-widget,
+  #energy-bot,
+  .energy-bot {
+    position: fixed !important;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100% !important;
+    height: 50vh !important;
+    max-height: 50vh !important;
+    min-height: 160px;
+    z-index: 99999 !important;
+    overflow: auto;
+    transform: none !important;
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* garantir que iframe interno respeite a altura */
+  #chatbot iframe,
+  .chatbot iframe,
+  .chat-widget iframe,
+  .bot-widget iframe,
+  #energy-bot iframe,
+  .energy-bot iframe {
+    height: 100% !important;
+    width: 100% !important;
+    border: 0;
+  }
+}
+
+/* ==========================================================================
+   CORREÇÕES TABELA COMPARATIVA (mercado-livre.html)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Tabela responsiva - transformar em cards */
+    .comparison-table {
+        overflow-x: visible !important;
+        border-radius: 12px !important;
+    }
+    
+    .comparison-table table {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .comparison-table thead {
+        display: none !important; /* Esconder header da tabela */
+    }
+    
+    .comparison-table tbody {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .comparison-table tr {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        margin-bottom: 1.5rem !important;
+        padding: 1rem !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 12px !important;
+    }
+    
+    .comparison-table td {
+        display: block !important;
+        width: 100% !important;
+        padding: 0.75rem 0 !important;
+        border-bottom: none !important;
+        text-align: left !important;
+    }
+    
+    .comparison-table td:first-child {
+        font-weight: 700 !important;
+        font-size: 1.125rem !important;
+        color: var(--text-primary) !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        border-bottom: 2px solid var(--border-light) !important;
+    }
+    
+    /* Adicionar labels antes do conteúdo */
+    .comparison-table td:nth-child(2)::before {
+        content: "Mercado Cativo: " !important;
+        font-weight: 600 !important;
+        color: var(--text-primary) !important;
+        display: block !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .comparison-table td:nth-child(3)::before {
+        content: "Mercado Livre: " !important;
+        font-weight: 600 !important;
+        color: var(--primary-blue) !important;
+        display: block !important;
+        margin-bottom: 0.25rem !important;
+        margin-top: 0.75rem !important;
+    }
+    
+    /* Ícones maiores em mobile */
+    .comparison-table .check,
+    .comparison-table .cross {
+        font-size: 1.25rem !important;
+        margin-right: 0.5rem !important;
+    }
+    
+    /* Highlight mais visível */
+    .comparison-table .highlight {
+        font-size: 1.125rem !important;
+        display: block !important;
+        padding: 0.5rem 1rem !important;
+        background: rgba(0, 102, 204, 0.1) !important;
+        border-radius: 8px !important;
+        margin-top: 0.5rem !important;
+    }
+}
+
+/* Mobile extra pequeno - ajuste adicional */
+@media (max-width: 375px) {
+    .comparison-table tr {
+        padding: 0.75rem !important;
+    }
+    
+    .comparison-table td {
+        font-size: 0.9rem !important;
+    }
+    
+    .comparison-table td:first-child {
+        font-size: 1rem !important;
+    }
+}
+
+/* ==========================================================================
+   UTILITIES MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Text utilities */
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    /* Spacing utilities */
+    .mb-mobile-2 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .mb-mobile-4 {
+        margin-bottom: 2rem !important;
+    }
+    
+    .p-mobile-1 {
+        padding: 0.5rem !important;
+    }
+    
+    .p-mobile-2 {
+        padding: 1rem !important;
+    }
+    
+    /* Width utilities */
+    .w-full-mobile {
+        width: 100% !important;
+    }
+    
+    /* Hide on mobile */
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   FIXES ESPECÍFICOS PARA INLINE STYLES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Override inline styles problemáticos */
+    [style*="display: grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    [style*="grid-template-columns"] {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    [style*="padding: 3rem"] {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    [style*="max-width: 1000px"],
+    [style*="max-width: 1200px"],
+    [style*="max-width: 1400px"] {
+        max-width: 100% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* ==========================================================================
+   LANDSCAPE MODE (Mobile em landscape)
+   ========================================================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto !important;
+        padding: 4rem 1rem 2rem !important;
+    }
+    
+    .page-header {
+        padding: 5rem 1rem 2rem !important;
+    }
+    
+    .chatbot-container {
+        max-height: 90vh !important;
+    }
+}
+
+/* ==========================================================================
+   PRINT STYLES (Para quando alguém imprimir)
+   ========================================================================== */
+
+@media print {
+    .chatbot-container,
+    .chatbot-button,
+    .mobile-menu-toggle,
+    .theme-toggle {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    .container {
+        max-width: 100% !important;
+    }
+}

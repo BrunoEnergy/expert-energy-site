@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert Energy - Performance em Energia. Soluções completas em gestão energética, mercado livre de energia e consultoria estratégica.">
+    <meta name="keywords" content="energia, gestão energética, mercado livre, consultoria, eficiência energética, Ribeirão Preto, gestão de energia, energia solar, sustentabilidade, software-energy-link">
+    <title>Expert Energy - Performance em Energia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo-expert-energy-icon.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo-expert-energy-icon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/mobile-fix.css">
+</head>
+<body>
+    <!-- Header/Navegação -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-expert-energy.png" 
+                     alt="Expert Energy - Performance em Energia" 
+                     class="logo-img">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="cases.html">Cases</a></li>
+                <li><a href="analise.html">Análise Gratuita</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-toggle-icon"><i class="fas fa-moon"></i></span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="images/hero-background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Performance em <span class="text-gradient">Energia</span></h1>
+                <p class="subtitle">Soluções tecnológicas e sustentáveis para otimizar sua gestão energética</p>
+                <p>Somos especialistas em gestão de energia, atuando no mercado livre, consultoria estratégica e eficiência energética. Nossa equipe de experts está pronta para transformar sua matriz energética em vantagem competitiva.</p>
+                <div class="hero-buttons">
+                    <a href="analise.html" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i>
+                        Análise Gratuita
+                    </a>
+                    <a href="#video-institucional" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Conheça a Expert
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-visual">
+                    <div class="stats-preview">
+                        <div class="stat-preview-item animate-pulse">
+                            <div class="stat-preview-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-preview-text">
+                                <div class="stat-preview-number">44%</div>
+                                <div class="stat-preview-label">Economia Média</div>
+                            </div>
+                        </div>
+                        <div class="stat-preview-item animate-pulse" style="animation-delay: 0.3s;">
+                            <div class="stat-preview-icon"><i class="fas fa-leaf"></i></div>
+                            <div class="stat-preview-text">
+                                <div class="stat-preview-number">500+</div>
+                                <div class="stat-preview-label">Clientes Atendidos</div>
+                            </div>
+                        </div>
+                        <div class="stat-preview-item animate-pulse" style="animation-delay: 0.6s;">
+                            <div class="stat-preview-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="stat-preview-text">
+                                <div class="stat-preview-number">15 Anos</div>
+                                <div class="stat-preview-label">de Experiência</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Por que escolher a Expert Energy?</span>
+                <h2 class="section-title">Transformamos Energia em <span class="text-gradient">Resultado</span></h2>
+                <p class="section-description">Combinamos tecnologia de ponta, expertise técnica e visão estratégica para entregar soluções personalizadas que geram economia real e sustentabilidade.</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="card-title">Tecnologia Avançada</h3>
+                    <p class="card-description">Plataforma Energy Link para monitoramento em tempo real, análise preditiva e gestão completa do seu consumo energético.</p>
+                    <a href="software-energy-link.html" class="card-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="card-title">Equipe de Experts</h3>
+                    <p class="card-description">Profissionais especializados com anos de experiência no setor energético, prontos para oferecer consultoria estratégica personalizada.</p>
+                    <a href="#contato" class="card-link">
+                        Fale com especialista <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3 class="card-title">Economia Garantida</h3>
+                    <p class="card-description">Reduza até 44% dos custos com energia através de gestão eficiente no mercado livre e otimização de contratos.</p>
+                    <a href="mercado-livre.html" class="card-link">
+                        Ver economia <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                    <h3 class="card-title">Sustentabilidade</h3>
+                    <p class="card-description">Soluções com foco em energia renovável e eficiência, reduzindo impactos ambientais e promovendo ESG.</p>
+                    <a href="energia-solar.html" class="card-link">
+                        Energia limpa <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossas Soluções -->
+    <section class="section section-alt" id="solucoes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Soluções Completas</span>
+                <h2 class="section-title">Tudo que sua Empresa Precisa em <span class="text-gradient">Energia</span></h2>
+                <p class="section-description">Do diagnóstico à implementação, oferecemos um portfólio completo de soluções para otimizar sua gestão energética.</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <a href="software-energy-link.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-desktop"></i></div>
+                    <h3 class="solution-card-title">Software Energy Link</h3>
+                    <p class="solution-card-description">Plataforma completa de gestão energética com dashboards, relatórios e análises em tempo real.</p>
+                    <div class="solution-card-badge">Tecnologia</div>
+                </a>
+                
+                <a href="mercado-livre.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="solution-card-title">Mercado Livre de Energia</h3>
+                    <p class="solution-card-description">Migração e gestão completa no mercado livre com economia de até 40% na fatura.</p>
+                    <div class="solution-card-badge">Economia</div>
+                </a>
+                
+                <a href="consultoria.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="solution-card-title">Consultoria Estratégica</h3>
+                    <p class="solution-card-description">Análise profunda da matriz energética e planejamento estratégico personalizado.</p>
+                    <div class="solution-card-badge">Especialização</div>
+                </a>
+                
+                <a href="eficiencia-energetica.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-cog"></i></div>
+                    <h3 class="solution-card-title">Eficiência Energética</h3>
+                    <p class="solution-card-description">Otimização de processos e redução de desperdícios com ROI comprovado.</p>
+                    <div class="solution-card-badge">Otimização</div>
+                </a>
+                
+                <a href="energia-solar.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-sun"></i></div>
+                    <h3 class="solution-card-title">Energia Solar</h3>
+                    <p class="solution-card-description">Projetos de geração distribuída e usinas solares para sua empresa.</p>
+                    <div class="solution-card-badge">Sustentável</div>
+                </a>
+                
+                <a href="monitoramento.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="solution-card-title">Monitoramento</h3>
+                    <p class="solution-card-description">Sistemas de monitoramento 24/7 com alertas e análises preditivas.</p>
+                    <div class="solution-card-badge">Controle</div>
+                </a>
+                
+                <a href="gestao-contratos.html" class="solution-card">
+                    <div class="solution-card-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3 class="solution-card-title">Gestão de Contratos</h3>
+                    <p class="solution-card-description">Negociação e gestão completa de contratos de fornecimento de energia.</p>
+                    <div class="solution-card-badge">Expertise</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Clientes Atendidos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">44%</div>
+                    <div class="stat-label">Economia Média</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15 Anos</div>
+                    <div class="stat-label">de Experiência</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfação dos Clientes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vídeo Institucional -->
+    <section class="section section-alt" id="video-institucional">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Conheça a Expert Energy</span>
+                <h2 class="section-title">Nossa História e <span class="text-gradient">Propósito</span></h2>
+                <p class="section-description">Veja como transformamos a gestão energética de empresas em todo Brasil.</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube-nocookie.com/embed/FLHZIEd58Ys?modestbranding=1&rel=0&iv_load_policy=3&controls=1&enablejsapi=1" 
+                        title="Vídeo Institucional Expert Energy" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA - Análise Gratuita -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Descubra o Potencial de Economia da sua Empresa</h2>
+                    <p>Faça uma análise gratuita e veja quanto você pode economizar com nossas soluções em gestão energética.</p>
+                    <div class="cta-benefits">
+                        <div class="cta-benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Análise completa sem compromisso</span>
+                        </div>
+                        <div class="cta-benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resposta em até 24 horas</span>
+                        </div>
+                        <div class="cta-benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consultoria com especialistas</span>
+                        </div>
+                    </div>
+                    <a href="analise.html" class="btn btn-gradient">
+                        <i class="fas fa-calculator"></i>
+                        Solicitar Análise Gratuita
+                    </a>
+                </div>
+                <div class="cta-visual">
+                    <div class="cta-icon-group">
+                        <div class="cta-icon-item"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="cta-icon-item"><i class="fas fa-chart-bar"></i></div>
+                        <div class="cta-icon-item"><i class="fas fa-bolt"></i></div>
+                        <div class="cta-icon-item"><i class="fas fa-leaf"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <img src="images/logo-expert-energy.png" 
+                         alt="Expert Energy" 
+                         class="logo-img"
+                         style="height: 60px;">
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Performance em Energia. Soluções completas para otimizar sua gestão energética com tecnologia e sustentabilidade.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/expertenergy/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/expertenergy.brasil/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/expertenergy.brasil/" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Soluções</h3>
+                <ul class="footer-links">
+                    <li><a href="software-energy-link.html">Software Energy Link</a></li>
+                    <li><a href="mercado-livre.html">Mercado Livre</a></li>
+                    <li><a href="consultoria.html">Consultoria Estratégica</a></li>
+                    <li><a href="eficiencia-energetica.html">Eficiência Energética</a></li>
+                    <li><a href="energia-solar.html">Energia Solar</a></li>
+                    <li><a href="gestao-contratos.html">Gestão de Contratos</a></li>
+                    <li><a href="monitoramento.html">Monitoramento</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul class="footer-links">
+                    <li><a href="cases.html">Cases de Sucesso</a></li>
+                    <li><a href="analise.html">Análise Gratuita</a></li>
+                    <li><a href="#video-institucional">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul class="footer-links">
+                    <li>
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        Av. Braz Olaia Acosta, Nº 727, Ed. Office Tower, salas . 2007, 2008  Jardim California - CEP14026-040 
+Ribeirão Preto SP 14026-040
+Brasil
+                    </li>
+                    <li>
+                        <i class="fas fa-phone" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        <a href="tel:+551636201604">(16) 3620-1604</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        <a href="mailto:contato@expertenergy.com.br">contato@expertenergy.com.br</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        <a href="https://api.whatsapp.com/send?phone=551636201604" target="_blank">WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Expert Energy - Performance em Energia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

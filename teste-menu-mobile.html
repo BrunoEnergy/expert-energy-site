@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Menu Mobile - Expert Energy</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Debug styles */
+        .debug-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 10000;
+            max-width: 300px;
+        }
+        
+        .nav-menu {
+            border: 3px solid red !important; /* Debug visual */
+        }
+        
+        .nav-menu.active {
+            border-color: green !important; /* Debug visual quando ativo */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="padding: 100px 20px; text-align: center;">Teste do Menu Mobile</h1>
+    <p style="text-align: center;">Reduza a largura da janela para menos de 1024px e clique no botão do menu</p>
+    
+    <!-- Header/Navegação -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-expert-energy.png" 
+                     alt="Expert Energy" 
+                     class="logo-img">
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="cases.html">Cases</a></li>
+                <li><a href="analise.html">Análise Gratuita</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="debug-info" id="debugInfo">
+        <div>Largura da tela: <span id="screenWidth"></span>px</div>
+        <div>Menu ativo: <span id="menuActive">false</span></div>
+        <div>Overlay ativo: <span id="overlayActive">false</span></div>
+        <div>Classes do menu: <span id="menuClasses"></span></div>
+    </div>
+
+    <script>
+        // Debug info
+        function updateDebugInfo() {
+            document.getElementById('screenWidth').textContent = window.innerWidth;
+            const navMenu = document.getElementById('navMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            
+            document.getElementById('menuActive').textContent = navMenu.classList.contains('active');
+            document.getElementById('overlayActive').textContent = overlay ? overlay.classList.contains('active') : 'no overlay';
+            document.getElementById('menuClasses').textContent = navMenu.className;
+        }
+        
+        setInterval(updateDebugInfo, 100);
+        window.addEventListener('resize', updateDebugInfo);
+        
+        // Menu mobile
+        function initMobileMenu() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            console.log('🔍 Menu Mobile Debug:');
+            console.log('Toggle button:', mobileMenuToggle);
+            console.log('Nav menu:', navMenu);
+            console.log('Nav menu computed style:', window.getComputedStyle(navMenu));
+            
+            // Criar overlay se não existir
+            let overlay = document.querySelector('.menu-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'menu-overlay';
+                document.body.appendChild(overlay);
+                console.log('✅ Overlay criado');
+            }
+            
+            if (mobileMenuToggle && navMenu) {
+                console.log('✅ Elementos encontrados, adicionando event listeners...');
+                
+                // Toggle menu ao clicar no botão
+                mobileMenuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    console.log('🖱️ Botão de menu clicado!');
+                    toggleMenu();
+                });
+                
+                // Fechar menu ao clicar no overlay
+                overlay.addEventListener('click', () => {
+                    closeMenu();
+                });
+                
+                // Fechar menu ao clicar em link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu();
+                    });
+                });
+                
+                // Fechar menu com ESC
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+            } else {
+                console.error('❌ Elementos não encontrados!');
+            }
+            
+            function toggleMenu() {
+                const isActive = navMenu.classList.contains('active');
+                console.log('Toggle menu. Is active?', isActive);
+                if (isActive) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+            
+            function openMenu() {
+                console.log('📂 Abrindo menu...');
+                navMenu.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                
+                console.log('✅ Menu aberto!');
+                console.log('Nav menu classes:', navMenu.className);
+                console.log('Nav menu style.right:', window.getComputedStyle(navMenu).right);
+                console.log('Nav menu style.display:', window.getComputedStyle(navMenu).display);
+            }
+            
+            function closeMenu() {
+                console.log('📁 Fechando menu...');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                console.log('✅ Menu fechado!');
+            }
+        }
+        
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            initMobileMenu();
+            console.log('✅ Página carregada!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Análise Gratuita de Perfil Energético - Expert Energy">
+    <title>Análise Gratuita | Expert Energy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo-expert-energy-icon.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo-expert-energy-icon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/mobile-fix.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-expert-energy.png" 
+                     alt="Expert Energy - Performance em Energia" 
+                     class="logo-img">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#solucoes">Soluções</a></li>
+                <li><a href="cases.html">Cases</a></li>
+                <li><a href="analise.html" class="active">Análise Gratuita</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-toggle-icon"><i class="fas fa-moon"></i></span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Análise <span class="text-gradient">Gratuita</span></h1>
+            <p>Descubra o potencial de economia da sua empresa em até 24 horas. Preencha o formulário e receba uma análise completa sem compromisso.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" style="max-width: 1000px;">
+            
+            <!-- Benefícios da Análise -->
+            <div style="margin-bottom: 4rem;">
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 3rem;">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-chart-bar"></i></div>
+                        <h3 class="card-title">Análise Detalhada</h3>
+                        <p class="card-description">Diagnóstico completo do seu perfil energético com identificação de oportunidades.</p>
+                    </div>
+                    
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-bolt"></i></div>
+                        <h3 class="card-title">Resposta Rápida</h3>
+                        <p class="card-description">Retorno em até 24 horas com proposta personalizada de economia.</p>
+                    </div>
+                    
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="card-title">Sem Compromisso</h3>
+                        <p class="card-description">Análise 100% gratuita sem qualquer obrigação de contratação.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário -->
+            <div class="card" style="padding: 3rem;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Solicite sua Análise</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.125rem;">Preencha os dados abaixo para recebermos sua solicitação</p>
+                </div>
+
+                <form id="analysisForm" action="https://formspree.io/f/xykjbyqp" method="POST" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="_subject" value="Nova solicitação — Análise Gratuita">
+                    <!-- Dados da Empresa -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-light);">
+                            <i class="fas fa-building" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                            Dados da Empresa
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nome da Empresa <span class="required">*</span></label>
+                                <input type="text" class="form-input" name="empresa" required placeholder="Digite o nome da empresa">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">CNPJ</label>
+                                <input type="text" class="form-input" name="cnpj" placeholder="00.000.000/0000-00">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Segmento</label>
+                                <select class="form-select" name="segmento">
+                                    <option value="">Selecione...</option>
+                                    <option value="industria">Indústria</option>
+                                    <option value="comercio">Comércio</option>
+                                    <option value="servicos">Serviços</option>
+                                    <option value="agronegocio">Agronegócio</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="construcao">Construção Civil</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dados de Contato -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-light);">
+                            <i class="fas fa-user" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                            Dados de Contato
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nome Completo <span class="required">*</span></label>
+                                <input type="text" class="form-input" name="nome" required placeholder="Seu nome completo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Cargo</label>
+                                <input type="text" class="form-input" name="cargo" placeholder="Seu cargo na empresa">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">E-mail <span class="required">*</span></label>
+                                <input type="email" class="form-input" name="_replyto" required placeholder="seu@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Telefone/WhatsApp <span class="required">*</span></label>
+                                <input type="tel" class="form-input" name="telefone" required placeholder="(00) 00000-0000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Endereço -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-light);">
+                            <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                            Endereço da Unidade Consumidora
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Endereço Completo <span class="required">*</span></label>
+                                <input type="text" class="form-input" name="endereco" required placeholder="Rua, número, bairro">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">CEP</label>
+                                <input type="text" class="form-input" name="cep" placeholder="00000-000">
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Cidade <span class="required">*</span></label>
+                                <input type="text" class="form-input" name="cidade" required placeholder="Nome da cidade">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Estado <span class="required">*</span></label>
+                                <select class="form-select" name="estado" required>
+                                    <option value="">UF</option>
+                                    <option value="SP">SP</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="MG">MG</option>
+                                    <option value="ES">ES</option>
+                                    <option value="PR">PR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="RS">RS</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="DF">DF</option>
+                                    <option value="BA">BA</option>
+                                    <option value="PE">PE</option>
+                                    <option value="CE">CE</option>
+                                    <option value="PA">PA</option>
+                                    <option value="AM">AM</option>
+                                    <option value="SE">SE</option>
+                                    <option value="AL">AL</option>
+                                    <option value="PB">PB</option>
+                                    <option value="RN">RN</option>
+                                    <option value="PI">PI</option>
+                                    <option value="MA">MA</option>
+                                    <option value="RO">RO</option>
+                                    <option value="AC">AC</option>
+                                    <option value="RR">RR</option>
+                                    <option value="TO">TO</option>
+                                    <option value="AP">AP</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dados de Consumo -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-light);">
+                            <i class="fas fa-bolt" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                            Informações de Consumo Energético
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Consumo Mensal (kWh) <span class="required">*</span></label>
+                                <input type="number" class="form-input" name="consumo" required placeholder="Ex: 50000" min="0">
+                                <small style="color: var(--text-tertiary); font-size: 0.875rem; margin-top: 0.5rem; display: block;">
+                                    Encontre esse valor na sua fatura de energia
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Demanda Contratada (kW)</label>
+                                <input type="number" class="form-input" name="demanda" placeholder="Ex: 500" min="0">
+                                <small style="color: var(--text-tertiary); font-size: 0.875rem; margin-top: 0.5rem; display: block;">
+                                    Informação disponível na fatura
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Valor Médio da Fatura <span class="required">*</span></label>
+                                <input type="number" class="form-input" name="valor_fatura" required placeholder="Ex: 42500.00" step="0.01" min="0">
+                                <small style="color: var(--text-tertiary); font-size: 0.875rem; margin-top: 0.5rem; display: block;">
+                                    Valor total pago mensalmente (R$)
+                                </small>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Distribuidora de Energia</label>
+                                <input type="text" class="form-input" name="distribuidora" placeholder="Ex: CPFL, Enel, Elektro">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Grupo Tarifário</label>
+                                <select class="form-select" name="grupo_tarifario">
+                                    <option value="">Selecione...</option>
+                                    <option value="a1">Grupo A1 (230 kV ou mais)</option>
+                                    <option value="a2">Grupo A2 (88 a 138 kV)</option>
+                                    <option value="a3">Grupo A3 (69 kV)</option>
+                                    <option value="a3a">Grupo A3a (30 a 44 kV)</option>
+                                    <option value="a4">Grupo A4 (2,3 a 25 kV)</option>
+                                    <option value="as">Grupo AS (subterrâneo)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload de Fatura -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-light);">
+                            <i class="fas fa-file-invoice" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                            Upload de Fatura de Energia
+                        </h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Anexe sua Fatura Mais Recente <span class="required">*</span></label>
+                            <div class="file-upload">
+                                <input type="file" name="fatura" id="faturaUpload" accept=".pdf,.jpg,.jpeg,.png" required style="display: none;">
+                                <input type="hidden" name="fatura_url" id="faturaUrl" value="">
+                                <div class="file-upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">
+                                    Clique para selecionar ou arraste o arquivo aqui
+                                </p>
+                                <p style="color: var(--text-tertiary); font-size: 0.875rem; margin: 0;">
+                                    Formatos aceitos: PDF, JPG, PNG (máx. 10MB)
+                                </p>
+                                <p class="file-name" style="color: var(--primary-blue); font-weight: 600; margin-top: 1rem;"></p>
+                            </div>
+                            <small style="color: var(--text-tertiary); font-size: 0.875rem; margin-top: 0.5rem; display: block;">
+                                A fatura nos ajuda a fazer uma análise mais precisa do seu perfil de consumo
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Interesse e Observações -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-light);">
+                            <i class="fas fa-comments" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                            Informações Adicionais
+                        </h3>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label class="form-label">Qual solução tem mais interesse?</label>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.75rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interesse[]" value="mercado-livre" style="width: 18px; height: 18px;">
+                                    <span style="color: var(--text-secondary);">Mercado Livre</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interesse[]" value="energia-solar" style="width: 18px; height: 18px;">
+                                    <span style="color: var(--text-secondary);">Energia Solar</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interesse[]" value="eficiencia" style="width: 18px; height: 18px;">
+                                    <span style="color: var(--text-secondary);">Eficiência Energética</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interesse[]" value="software" style="width: 18px; height: 18px;">
+                                    <span style="color: var(--text-secondary);">Software Energy Link</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interesse[]" value="consultoria" style="width: 18px; height: 18px;">
+                                    <span style="color: var(--text-secondary);">Consultoria</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Mensagem ou Observações</label>
+                            <textarea class="form-textarea" name="mensagem" rows="5" placeholder="Conte-nos mais sobre suas necessidades, desafios ou dúvidas..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Termos e Botão -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                            <input type="checkbox" required style="width: 20px; height: 20px; margin-top: 0.25rem; flex-shrink: 0;">
+                            <span style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                                Concordo em compartilhar minhas informações para receber a análise gratuita e aceito ser contatado pela Expert Energy. Seus dados estão protegidos conforme a LGPD.
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-gradient" style="width: 100%; justify-content: center; font-size: 1.25rem; padding: 1.25rem 2rem;">
+                        <i class="fas fa-paper-plane"></i>
+                        Solicitar Análise Gratuita
+                    </button>
+
+                    <!-- Botão WhatsApp Alternativo -->
+                    <a href="https://wa.me/551636201604?text=Olá! Gostaria de solicitar uma análise energética, mas preciso de ajuda para preencher as informações." 
+                       target="_blank" 
+                       class="btn" 
+                       style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem 2rem; margin-top: 1rem; background: #25D366; color: white; border: none;">
+                        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+                        Não tem todas as informações? Fale conosco no WhatsApp
+                    </a>
+
+                    <p style="text-align: center; color: var(--text-tertiary); font-size: 0.875rem; margin-top: 1rem;">
+                        <i class="fas fa-shield-alt" style="color: var(--primary-blue);"></i>
+                        Seus dados estão seguros conosco. Não compartilhamos informações com terceiros.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Informações de Segurança -->
+            <div style="margin-top: 4rem;">
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-clock" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Resposta em 24h</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Retornamos rapidamente com sua análise personalizada</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-lock" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Dados Protegidos</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Conformidade total com LGPD e segurança da informação</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-award" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">15 Anos de Mercado</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Experiência e credibilidade no setor energético</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <img src="images/logo-expert-energy.png" 
+                         alt="Expert Energy" 
+                         class="logo-img"
+                         style="height: 60px;">
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Performance em Energia. Soluções completas para otimizar sua gestão energética com tecnologia e sustentabilidade.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/expertenergy/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/expertenergy.brasil/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/expertenergy.brasil/" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Soluções</h3>
+                <ul class="footer-links">
+                    <li><a href="software-energy-link.html">Software Energy Link</a></li>
+                    <li><a href="mercado-livre.html">Mercado Livre</a></li>
+                    <li><a href="consultoria.html">Consultoria Estratégica</a></li>
+                    <li><a href="eficiencia-energetica.html">Eficiência Energética</a></li>
+                    <li><a href="energia-solar.html">Energia Solar</a></li>
+                    <li><a href="gestao-contratos.html">Gestão de Contratos</a></li>
+                    <li><a href="monitoramento.html">Monitoramento</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul class="footer-links">
+                    <li><a href="cases.html">Cases de Sucesso</a></li>
+                    <li><a href="analise.html">Análise Gratuita</a></li>
+                    <li><a href="index.html">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul class="footer-links">
+                    <li>
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        Av. Braz Olaia Acosta, Nº 727, Ed. Office Tower, salas . 2007, 2008  Jardim California - CEP14026-040 
+Ribeirão Preto SP 14026-040
+Brasil
+                    </li>
+                    <li>
+                        <i class="fas fa-phone" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        <a href="tel:+551636201604">(16) 3620-1604</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        <a href="mailto:contato@expertenergy.com.br">contato@expertenergy.com.br</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                        <a href="https://api.whatsapp.com/send?phone=551636201604" target="_blank">WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Expert Energy - Performance em Energia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
