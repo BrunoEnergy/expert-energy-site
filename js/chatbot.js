@@ -374,7 +374,7 @@
         },
         mercado: {
           user: 'O que é o Mercado Livre de Energia?',
-          bot: 'No Mercado Livre, sua empresa pode escolher o fornecedor de energia e negociar preços mais baixos, economizando até 30%!'
+          bot: 'No Mercado Livre, sua empresa pode escolher o fornecedor de energia e negociar preços mais baixos, economizando até 40%!'
         },
         servicos: {
           user: 'Quais são os serviços da Expert Energy?',
@@ -386,7 +386,7 @@
         },
         beneficios: {
           user: 'Quais são os benefícios?',
-          bot: '• Redução de até 30% nos custos<br>• Liberdade de escolha de fornecedor<br>• Previsibilidade financeira<br>• Sustentabilidade e energia limpa'
+          bot: '• Redução de até 40% nos custos<br>• Liberdade de escolha de fornecedor<br>• Previsibilidade financeira<br>• Sustentabilidade e energia limpa'
         },
         migracao: {
           user: 'Como funciona a migração?',
@@ -394,7 +394,7 @@
         },
         economia: {
           user: 'Quanto posso economizar?',
-          bot: 'Empresas no Mercado Livre economizam em média 20-30% com a gestão certa!<br><br>Faça uma <a href="analise.html" style="color: white; font-weight: bold;">análise gratuita</a> e descubra seu potencial de economia.'
+          bot: 'Empresas no Mercado Livre economizam em média 20-40% com a gestão certa!<br><br>Faça uma <a href="analise.html" style="color: white; font-weight: bold;">análise gratuita</a> e descubra seu potencial de economia.'
         }
       };
 
