@@ -9,7 +9,7 @@ const equipmentVideos = {
     'painel-controlador': '', // Sem vídeo ainda
     'kfp3': '', // Sem vídeo ainda
     'gateway-gt202': '', // Sem vídeo ainda
-    'gateway-gt204': '88hZyZCeZTs', // Sem vídeo ainda
+    'gateway-gt204': '88hZyZCeZTs',
     'psm7300': '' // Sem vídeo ainda
 };
 
