@@ -5,7 +5,7 @@
 
 // Mapeamento de vídeos por equipamento (ID do YouTube)
 const equipmentVideos = {
-    'gerador-estatico-var': '', // Sem vídeo ainda
+    'smart-var-controller': '', // Sem vídeo ainda
     'painel-controlador': '', // Sem vídeo ainda
     'kfp3': '', // Sem vídeo ainda
     'gateway-gt202': 'giFlTdGM9VM',
