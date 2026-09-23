@@ -7,7 +7,7 @@
 const equipmentVideos = {
     'smart-var-controller': '', // Sem vídeo ainda
     'painel-controlador': '', // Sem vídeo ainda
-    'kfp3': '', // Sem vídeo ainda
+    'kfp3': 'ko7_Pw1Nq6Y',
     'gateway-gt202': 'giFlTdGM9VM',
     'gateway-gt204': '88hZyZCeZTs',
     'psm7300': '' // Sem vídeo ainda
