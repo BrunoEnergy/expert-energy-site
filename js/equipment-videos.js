@@ -10,7 +10,7 @@ const equipmentVideos = {
     'kfp3': 'ko7_Pw1Nq6Y',
     'gateway-gt202': 'giFlTdGM9VM',
     'gateway-gt204': '88hZyZCeZTs',
-    'psm7300': '' // Sem vídeo ainda
+    'psm7300': 'oucCMv9BPGQ'
 };
 
 /**
