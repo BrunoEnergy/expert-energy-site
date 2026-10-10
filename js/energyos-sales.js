@@ -16,6 +16,7 @@
  busy=true;form.querySelectorAll('button').forEach(b=>b.disabled=true);send.textContent='Confirmando recebimento…';message.textContent='';
  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),20000);
  try{const response=await fetch(form.dataset.api,{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,requestId}),signal:controller.signal});const result=await response.json().catch(()=>null);
+ if(response.status===410){requestId='';lastPayload='';form.elements.namedItem('consent').checked=false;message.textContent='O protocolo anterior foi encerrado. Confira os dados e autorize novamente para iniciar uma nova solicitação.';return;}
  if(!response.ok){message.textContent=response.status===400?'Confira o CNPJ, telefone com +55 e demais campos.':response.status===429?'Limite de solicitações atingido. Tente novamente mais tarde.':'Recebimento não confirmado. Tente novamente ou fale com a Expert Energy.';return;}
  if(result?.status!=='RECEIVED'||result?.receipt!==requestId)throw new Error('Unconfirmed receipt');
  message.textContent='Solicitação recebida. Protocolo: '+result.receipt+'. A equipe avaliará seu perfil e entrará em contato. Nenhuma contratação foi realizada.';form.querySelectorAll('input,select,button').forEach(el=>el.disabled=true);form.dataset.received='true';
