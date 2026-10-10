@@ -24,3 +24,6 @@ Homologação: desktop e mobile, navegação teclado, revisão dos dados, falha 
 Prévia local: python -m http.server 8092 --bind 127.0.0.1 e abrir http://127.0.0.1:8092/energyos/.
 
 Teste local: node energyos-wizard.test.cjs (requer jsdom disponível no checkout EnergyOS ../whatsapp-v2/frontend; em outro local defina ENERGYOS_TEST_MODULE_ROOT com caminho do pacote que contém jsdom).
+
+Hospedagem verificada: GitHub Pages (legacy), main, raiz /, CNAME www.expertenergy.com.br. Confirmar com Bruno o papel do Cloudflare; não criar uma segunda hospedagem nem alterar DNS.
+Política aprovada: contatos comerciais não convertidos por 90 dias; correção/exclusão via contato@expertenergy.com.br, com atendimento restrito ao Owner. A implantação do backend deve incluir a migração de retenção, e o Owner deverá realizar a conferência diária antes de abrir a captação. Não há limpeza automática nesta fase.
