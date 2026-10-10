@@ -1,0 +1,29 @@
+ENERGYOS — instalação no site estático
+Commit de base: 1ed2c67c9d26242850847a266fccc7a1453c576a.
+Branch proposta: feat/energyos-landing. Nenhuma configuração Cloudflare alterada.
+
+Arquivos: energyos/index.html, css/energyos.css, js/energyos-sales.js, images/energyos/logo-dark.svg e um link EnergyOS no menu inicial.
+CSS todo limitado à classe eos, sem modificar CSS/JS globais. Não importa o chatbot externo Render; integração com Bot autenticado não é parte desta fase.
+Manter Energy Link nas páginas existentes até decidir estratégia de nomes/serviços; nova rota é EnergyOS.
+
+Cloudflare Pages, caso seja a hospedagem atual:
+- Conferir GitHub/BrunoEnergy/expert-energy-site, branch de produção e raiz atual no painel.
+- Para este código HTML estático, não é necessário framework ou compilação; diretório publicado é a raiz do repositório, salvo configuração real diferente.
+- Usar preview de branch antes de merge; conferir /energyos/, assets absolutos /css /js /images, menu mobile e páginas antigas.
+- Não alterar DNS/CNAME de produção para incorporar esta pasta.
+Se Cloudflare for Workers, verificar configuração atual antes de definir diretório de assets/rotas. Se apenas proxy DNS, publicar no servidor de origem existente.
+
+API pública configurada somente em data-api do formulário:
+https://energy-management-platform-production.up.railway.app/api/v1/public/sales/leads
+Nenhum segredo é incluído. Só publicar captação após backend/migração/origem/privacidade/retencão aprovados e configurados. Sem ativação confirmada, envios mostram indisponibilidade e nunca falso sucesso.
+
+Formulário de cinco etapas, campos validados no backend, objetivos, preferência de contato e consentimento. Novo requestId se dados forem alterados; reenvio idêntico mantém requestId durante a permanência na página. Não persistir contatos no localStorage.
+Não há preço, checkout, assinatura, SMS ou comunicação automática nesta versão.
+
+Homologação: desktop e mobile, navegação teclado, revisão dos dados, falha de rede, timeout, retorno inválido, sucesso só com protocolo confirmado, evitar duplicação. Simulações de fetch são somente testes locais; fluxo de produção usa endpoint real.
+Prévia local: python -m http.server 8092 --bind 127.0.0.1 e abrir http://127.0.0.1:8092/energyos/.
+
+Teste local: node energyos-wizard.test.cjs (requer jsdom disponível no checkout EnergyOS ../whatsapp-v2/frontend; em outro local defina ENERGYOS_TEST_MODULE_ROOT com caminho do pacote que contém jsdom).
+
+Hospedagem verificada: GitHub Pages (legacy), main, raiz /, CNAME www.expertenergy.com.br. Confirmar com Bruno o papel do Cloudflare; não criar uma segunda hospedagem nem alterar DNS.
+Política aprovada: contatos comerciais não convertidos por 90 dias; correção/exclusão via contato@expertenergy.com.br, com atendimento restrito ao Owner. A implantação do backend deve incluir a migração de retenção, e o Owner deverá realizar a conferência diária antes de abrir a captação. Não há limpeza automática nesta fase.
