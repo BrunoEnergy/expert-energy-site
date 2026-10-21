@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/mobile-fix.css">
     <link rel="stylesheet" href="css/cookie-consent.css">
+    <link rel="stylesheet" href="css/energy-tech.css">
+    <script src="js/energy-tech.js" defer></script>
 </head>
 <body>
     <!-- Header/Navegação -->
@@ -36,7 +38,6 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Início</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="energyos/">EnergyOS</a></li>
                 <li><a href="cases.html">Cases</a></li>
                 <li><a href="equipamentos.html">Equipamentos</a></li>
                 <li><a href="analise.html">Análise Gratuita</a></li>
@@ -51,8 +52,42 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
+            <a class="energy-tech-link" href="energyos/" data-energy-tech aria-haspopup="dialog" aria-controls="energy-tech"><span class="et-word">Energy<b>OS</b></span><small>ENERGY TECH ↗</small></a>
         </nav>
     </header>
+
+    <dialog id="energy-tech" aria-labelledby="et-title" aria-describedby="et-description">
+        <div class="et-shell">
+            <div class="et-top">
+                <div class="et-brand">Energy<b>OS</b><small>POWERED BY EXPERT ENERGY</small></div>
+                <button class="et-close" type="button" data-close autofocus aria-label="Fechar apresentação do EnergyOS">Fechar ×</button>
+            </div>
+            <div class="et-intro">
+                <div>
+                    <div class="et-kicker">Energy Tech · Plataforma SaaS</div>
+                    <h2 id="et-title">O cérebro estratégico<br>da sua <em>gestão de energia.</em></h2>
+                    <p id="et-description">Para empresas, consultorias e gestoras que representam outras organizações. Uma plataforma SaaS com inteligência EVA para conectar clientes, unidades, regras regulatórias, contratos e faturas — e transformar informação em eficiência e melhores negociações.</p>
+                </div>
+                <div class="et-persona">
+                    <div class="et-orbit" aria-hidden="true"></div>
+                    <img src="images/energyos/eva-orb.webp" width="190" height="190" alt="EVA, inteligência do EnergyOS">
+                    <div class="et-persona-label"><b>EVA</b> · EnergyOS Virtual Analyst</div>
+                </div>
+            </div>
+            <p class="et-position" style="position:relative;color:#70e5de;font-size:.72rem;line-height:1.7;letter-spacing:.04em;margin:0 0 12px">Gestão · Mercado · EVA · Estratégia · Compliance · Negócios</p>
+            <div class="et-journey" aria-label="Etapas conectadas da gestão no EnergyOS">
+                <article class="et-step" style="--step:0"><span>01 / CONECTAR</span><h3>Clientes e unidades</h3><p>Organize sua carteira, documentos e faturas. OCR e IA apoiam a leitura dos dados.</p></article>
+                <article class="et-step" style="--step:1"><span>02 / ENTENDER</span><h3>Inteligência regulatória</h3><p>A EVA conecta fontes e regras aplicáveis para apoiar sua análise e conferência.</p></article>
+                <article class="et-step" style="--step:2"><span>03 / AGIR</span><h3>Eficiência e negociação</h3><p>Identifique desperdícios, compare cenários e fortaleça sua estratégia de compra.</p></article>
+                <article class="et-step" style="--step:3"><span>04 / EVOLUIR</span><h3>Valor para cada cliente</h3><p>Acompanhe indicadores e entregue resultados aprovados com transparência pelo portal.</p></article>
+            </div>
+            <div class="et-bottom">
+                <div><strong>Sua inteligência. Mais alcance.<br>Mais valor para cada cliente, com a EVA.</strong><p>Gestão estratégica para sua operação e para as organizações que você representa.</p></div>
+                <a class="et-cta" href="energyos/#qualificacao">Solicite uma demonstração <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="et-timing">Apresentação de abertura · Feche quando quiser. O destaque EnergyOS continua no topo.</p>
+        </div>
+    </dialog>
 
     <!-- Hero Section -->
     <section class="hero">
