@@ -4,6 +4,7 @@
  const steps=Array.from(form.querySelectorAll('[data-step]')),back=document.getElementById('back'),next=document.getElementById('next'),send=document.getElementById('send'),message=document.getElementById('sales-message');
  const titles=['Seu contato','Sua organização','Perfil energético','Seus objetivos','Conferência'];
  let step=0,requestId='',lastPayload='',busy=false;
+ const access=Array.from(crypto.getRandomValues(new Uint8Array(32)),n=>n.toString(16).padStart(2,'0')).join('');
  const value=name=>form.elements.namedItem(name).value.trim();
  const goals=()=>Array.from(form.querySelectorAll('input[name="goals"]:checked')).map(n=>n.value);
  function valid(index){for(const el of steps[index].querySelectorAll('input,select')){if(!el.reportValidity())return false;}if(index===3&&!goals().length){message.textContent='Selecione pelo menos um objetivo.';return false;}return true;}
@@ -15,10 +16,11 @@
  const fingerprint=JSON.stringify(payload);if(!requestId||fingerprint!==lastPayload){requestId=crypto.randomUUID();lastPayload=fingerprint;}
  busy=true;form.querySelectorAll('button').forEach(b=>b.disabled=true);send.textContent='Confirmando recebimento…';message.textContent='';
  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),20000);
- try{const response=await fetch(form.dataset.api,{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,requestId}),signal:controller.signal});const result=await response.json().catch(()=>null);
+ try{const response=await fetch(form.dataset.api,{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json','X-Sales-Access':access},body:JSON.stringify({...payload,requestId}),signal:controller.signal});const result=await response.json().catch(()=>null);
  if(response.status===410){requestId='';lastPayload='';form.elements.namedItem('consent').checked=false;message.textContent='O protocolo anterior foi encerrado. Confira os dados e autorize novamente para iniciar uma nova solicitação.';return;}
  if(!response.ok){message.textContent=response.status===400?'Confira o CNPJ, telefone com +55 e demais campos.':response.status===429?'Limite de solicitações atingido. Tente novamente mais tarde.':'Recebimento não confirmado. Tente novamente ou fale com a Expert Energy.';return;}
  if(result?.status!=='RECEIVED'||result?.receipt!==requestId)throw new Error('Unconfirmed receipt');
+ if(result.journeyAvailable===true){try{sessionStorage.setItem('energyos-sales-access-v1',JSON.stringify({receipt:result.receipt,access}));location.assign('/energyos/acompanhar/');return;}catch{ /* The protocol remains saved if browser storage is disabled. */ }}
  message.textContent='Solicitação recebida. Protocolo: '+result.receipt+'. A equipe avaliará seu perfil e entrará em contato. Nenhuma contratação foi realizada.';form.querySelectorAll('input,select,button').forEach(el=>el.disabled=true);form.dataset.received='true';
  }catch{message.textContent='Não foi possível confirmar o recebimento. Você pode tentar novamente; o mesmo envio mantém seu protocolo.';}
  finally{clearTimeout(timeout);busy=false;if(form.dataset.received!=='true')form.querySelectorAll('button').forEach(b=>b.disabled=false);send.textContent=form.dataset.received==='true'?'Recebido':'Solicitar avaliação';}
