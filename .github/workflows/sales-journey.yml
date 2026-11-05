@@ -1,0 +1,21 @@
+name: Public sales journey
+on:
+  pull_request:
+    paths:
+      - 'js/energyos-sales.js'
+      - 'js/energyos-journey.js'
+      - 'energyos/acompanhar.html'
+      - 'css/energyos-journey.css'
+      - 'energyos-journey.test.cjs'
+      - '.github/workflows/sales-journey.yml'
+permissions:
+  contents: read
+jobs:
+  public-journey:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check js/energyos-sales.js && node --check js/energyos-journey.js && node energyos-journey.test.cjs
