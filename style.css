@@ -21,3 +21,8 @@ nav{font-size:15px;gap:25px}.hero-description{font-size:18px;max-width:450px}.te
 
 /* Keep the black Cenourão wordmark legible on dark backgrounds during hover and focus. */
 .client-marquee .client-logo:hover img[src$="cenourao.png"],.client-marquee .client-logo:focus-visible img[src$="cenourao.png"]{filter:grayscale(1) invert(1) brightness(.88);opacity:1}
+
+/* Subtle display-only lift: preserve the original GT 204 photo and hardware details. */
+.equipment-image img[src*="ee-Gateway204.png"]{filter:brightness(1.2) drop-shadow(0 18px 12px #0005)}
+.hardware-teaser img[src*="ee-Gateway204.png"]{filter:brightness(1.2) drop-shadow(0 12px 25px #0008);opacity:1}
+.detail-image[src*="ee-Gateway204.png"]{filter:brightness(1.2)}
