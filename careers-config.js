@@ -1,4 +1,3 @@
-// After Azure deployment, set the HTTPS origin returned by the Function App.
-// Example shape only: https://<your-app>.azurewebsites.net/api/careers/v1
-// Never put an ERP access token, function key, client secret or storage key here.
-window.EE_CAREERS_CONFIG=Object.freeze({apiBaseUrl:'',retentionMonths:12});
+// Public Careers API. Authentication for ERP administration stays on the server.
+// Never place a client secret, storage key or ERP token in this file.
+window.EE_CAREERS_CONFIG=Object.freeze({apiBaseUrl:'https://app.energy-core.expertenergy.com.br/api/careers/v1',retentionMonths:12});
